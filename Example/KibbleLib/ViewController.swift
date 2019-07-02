@@ -10,47 +10,60 @@ import KibbleLib
 import UIKit
 
 class ViewController: UIViewController {
-    weak var testView: UIView!
-    weak var testView2: UIView!
+    private let testView = UIView()
+    private let testView2 = UIView()
+    private let testView3 = UIView()
+    private let testView4 = UIView()
+    private let testView5 = UIView()
+    private let testView6 = UIView()
     
     override func loadView() {
         super.loadView()
-        let testView = UIView()
-        testView.translatesAutoresizingMaskIntoConstraints = false
-        let testView2 = UIView()
-        testView2.translatesAutoresizingMaskIntoConstraints = false
-        view.AddSubviews(testView, testView2)
-        NSLayoutConstraint.activate([
-            testView.heightAnchor.constraint(equalToConstant: 64),
-            testView.widthAnchor.constraint(equalTo: testView.heightAnchor),
-            testView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            testView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-            ])
-        self.testView = testView
-        NSLayoutConstraint.activate([
-            testView2.heightAnchor.constraint(equalTo: testView.heightAnchor),
-            testView2.widthAnchor.constraint(equalTo: testView.widthAnchor),
-            testView2.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            testView2.bottomAnchor.constraint(equalTo: testView.topAnchor)
-            ])
-        let tapReco = UITapGestureRecognizer(target: self, action: #selector(self.shakeView (_:)))
-        testView2.addGestureRecognizer(tapReco)
-        self.testView2 = testView2
+        setupViews()
+        
+        testView2.AddSingleTapGestureRecognizerWithResponder { [weak self] tap -> Void in
+            if let sSelf = self {
+                sSelf.testView2.Shake()
+            }
+        }
+        testView.AddSingleTapGestureRecognizerWithResponder(responder: self.shakeView1)
+        
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
-        testView.backgroundColor = .yellow
-        testView2.backgroundColor = .green
+        testView.backgroundColor = .red
+        testView2.backgroundColor = .yellow
+        testView3.backgroundColor = .green
+        testView4.backgroundColor = .blue
+        testView5.backgroundColor = .purple
+        testView6.backgroundColor = .orange
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    private func setupViews() {
+        view.AddSubviews(testView, testView2, testView3, testView4, testView5, testView6)
+        setupConstraintsFor(view: testView, with: nil)
+        setupConstraintsFor(view: testView2, with: testView)
+        setupConstraintsFor(view: testView3, with: testView2)
+        setupConstraintsFor(view: testView4, with: testView3)
+        setupConstraintsFor(view: testView5, with: testView4)
+        setupConstraintsFor(view: testView6, with: testView5)
     }
     
-    @objc func shakeView(_ sender: UITapGestureRecognizer) {
-        self.testView2.Shake()
+    private func setupConstraintsFor(view: UIView, with previousView: UIView?) {
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.layer.cornerRadius = 5;
+        view.layer.masksToBounds = true;
+        let topAnchor: NSLayoutAnchor = previousView?.bottomAnchor ?? self.view.safeAreaLayoutGuide.topAnchor
+        NSLayoutConstraint.activate([
+            view.heightAnchor.constraint(equalToConstant: 55),
+            view.widthAnchor.constraint(equalTo: self.view.widthAnchor, constant: -60),
+            view.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            view.topAnchor.constraint(equalTo: topAnchor, constant: 20)
+            ])
+    }
+    
+    private func shakeView1(_ sender: UITapGestureRecognizer) {
+        self.testView.Shake()
     }
 }
-
