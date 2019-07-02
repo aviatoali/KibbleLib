@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  KibbleLib
 //
-//  Created by aviatoali on 07/02/2019.
-//  Copyright (c) 2019 aviatoali. All rights reserved.
+//  Created by Ali H. Shah on 07/02/2019.
+//  Copyright (c) 2019 Ali H. Shah. All rights reserved.
 //
 
 import UIKit
@@ -13,9 +13,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let homeViewController = ViewController()
+        if let window = self.window {
+            window.rootViewController = homeViewController
+            window.makeKeyAndVisible()
+        }
         return true
     }
 
@@ -40,7 +44,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
 
