@@ -41,11 +41,11 @@
 		607FACE51AFB9204008FA782 /* KibbleLib_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KibbleLib_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		6B2C3A9E6D21A65D2FED8D0A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		6B2C3A9E6D21A65D2FED8D0A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		72F047035ABDC74F728DE0B4 /* Pods_KibbleLib_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KibbleLib_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		75B0E561C84E71E7778027AC /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		75B0E561C84E71E7778027AC /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		96193ADC486FA332E68CB20C /* Pods-KibbleLib_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KibbleLib_Example.release.xcconfig"; path = "Target Support Files/Pods-KibbleLib_Example/Pods-KibbleLib_Example.release.xcconfig"; sourceTree = "<group>"; };
-		E3C49A52F943E575AAEA8C1E /* KibbleLib.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = KibbleLib.podspec; path = ../KibbleLib.podspec; sourceTree = "<group>"; };
+		E3C49A52F943E575AAEA8C1E /* KibbleLib.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = KibbleLib.podspec; path = ../KibbleLib.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		EF0DE263253260291CEAAAF7 /* Pods-KibbleLib_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KibbleLib_Tests.debug.xcconfig"; path = "Target Support Files/Pods-KibbleLib_Tests/Pods-KibbleLib_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,7 +147,6 @@
 				EF0DE263253260291CEAAAF7 /* Pods-KibbleLib_Tests.debug.xcconfig */,
 				14D99D6D749E0C4A3FCE43B3 /* Pods-KibbleLib_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -228,6 +227,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);

@@ -1,0 +1,6 @@
+framework module KibbleLib {
+  umbrella header "KibbleLib-umbrella.h"
+
+  export *
+  module * { export * }
+}

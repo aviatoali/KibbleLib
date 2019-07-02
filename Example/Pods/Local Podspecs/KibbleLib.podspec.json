@@ -1,0 +1,22 @@
+{
+  "name": "KibbleLib",
+  "version": "0.1.0",
+  "summary": "A short description of KibbleLib.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/aviatoali/KibbleLib",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "aviatoali": "ashah@tangocode.com"
+  },
+  "source": {
+    "git": "https://github.com/aviatoali/KibbleLib.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "KibbleLib/Classes/**/*"
+}

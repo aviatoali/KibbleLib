@@ -5,6 +5,8 @@
 [![License](https://img.shields.io/cocoapods/l/KibbleLib.svg?style=flat)](https://cocoapods.org/pods/KibbleLib)
 [![Platform](https://img.shields.io/cocoapods/p/KibbleLib.svg?style=flat)](https://cocoapods.org/pods/KibbleLib)
 
+Bits and pieces (get it? Kibbles and bits? :D...sorry, I'm better than this) of extensions and utils that have been gathered over time to make future apps and projects more convenient. 
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
@@ -22,7 +24,7 @@ pod 'KibbleLib'
 
 ## Author
 
-aviatoali, ashah@tangocode.com
+aviatoali, aviatoali@gmail.com
 
 ## License
 
