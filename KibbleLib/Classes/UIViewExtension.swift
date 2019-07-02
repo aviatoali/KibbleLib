@@ -62,47 +62,42 @@ public extension UIView {
         }
     }
 
-    // TODO: Rename, I don't like this placeholder
-    func AddSingleTapGestureRecognizerWithResponder(responder: TapAction?) {
-        self.AddTapGestureRecognizerForNumberOfTaps(withResponder: responder)
+    func AddSingleTapRecoWith(action: TapAction?) {
+        self.AddTapRecoWith(action: action)
     }
 
-    func AddDoubleTapGestureRecognizerWithResponder(responder: TapAction?) {
-        self.AddTapGestureRecognizerForNumberOfTaps(numberOfTaps: 2, withResponder: responder)
+    func AddDoubleTapRecoWith(action: TapAction?) {
+        self.AddTapRecoWith(numberOfTaps: 2, action: action)
     }
 
-    func AddTapGestureRecognizerForNumberOfTaps(numberOfTaps: Int = 1, numberOfTouches: Int = 1, withResponder responder: TapAction?) {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTapGesture))
+    func AddTapRecoWith(numberOfTaps: Int = 1, numberOfTouches: Int = 1, action: TapAction?) {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(onTap))
         tap.numberOfTapsRequired = numberOfTaps
         tap.numberOfTouchesRequired = numberOfTouches
         self.addGestureRecognizer(tap)
-        ActionHolder.TapActionHolder?[tap] = responder
+        ActionHolder.TapActionHolder?[tap] = action
         Swizzler.SwizzleRemoveFromSuperview()
     }
 
-    // TODO: Update access modifiers.
-
-    @objc fileprivate func handleTapGesture(sender: UITapGestureRecognizer) {
-        print("@@@@@@@@@ entering handleTap")
+    @objc fileprivate func onTap(sender: UITapGestureRecognizer) {
         if let action = ActionHolder.TapActionHolder?[sender] {
             action(sender)
         }
     }
 
-    func AddLongPressGestureRecognizerWithResponder(responder: LongPressAction?) {
-        self.AddLongPressGestureRecognizerForNumberOfTouches(numberOfTouches: 1, withResponder: responder)
+    func AddLongPressRecoWith(action: LongPressAction?) {
+        self.AddLongPressRecoFor(numberOfTouches: 1, withAction: action)
     }
 
-    func AddLongPressGestureRecognizerForNumberOfTouches(numberOfTouches: Int, withResponder responder: LongPressAction?) {
-        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
+    func AddLongPressRecoFor(numberOfTouches: Int, withAction action: LongPressAction?) {
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(onLongPress))
         longPress.numberOfTouchesRequired = numberOfTouches
         self.addGestureRecognizer(longPress)
-        ActionHolder.LongPressActionHolder?[longPress] = responder
+        ActionHolder.LongPressActionHolder?[longPress] = action
         Swizzler.SwizzleRemoveFromSuperview()
     }
 
-    @objc fileprivate func handleLongPress(sender: UILongPressGestureRecognizer) {
-        print("@@@@@@@@@ entering handleLongPress")
+    @objc fileprivate func onLongPress(sender: UILongPressGestureRecognizer) {
         if let action = ActionHolder.LongPressActionHolder?[sender] {
             action(sender)
         }

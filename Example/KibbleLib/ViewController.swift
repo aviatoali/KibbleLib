@@ -21,13 +21,28 @@ class ViewController: UIViewController {
         super.loadView()
         setupViews()
         
-        testView2.AddSingleTapGestureRecognizerWithResponder { [weak self] tap -> Void in
+        testView.AddSingleTapRecoWith(action: self.shakeView)
+        
+        testView2.AddSingleTapRecoWith { [weak self] tap -> Void in
             if let sSelf = self {
                 sSelf.testView2.Shake()
             }
         }
-        testView.AddSingleTapGestureRecognizerWithResponder(responder: self.shakeView1)
+
+        testView3.AddDoubleTapRecoWith(action: self.shakeView3)
         
+        testView4.AddDoubleTapRecoWith { [weak self] tap -> Void in
+            if let sSelf = self {
+                sSelf.testView4.Shake()
+            }
+        }
+        
+        testView5.AddLongPressRecoWith(action: self.shakeView5)
+        testView6.AddLongPressRecoWith { [weak self] longPress -> Void in
+            if let sSelf = self {
+                sSelf.testView6.Shake()
+            }
+        }
     }
 
     override func viewDidLoad() {
@@ -63,7 +78,15 @@ class ViewController: UIViewController {
             ])
     }
     
-    private func shakeView1(_ sender: UITapGestureRecognizer) {
+    private func shakeView(_ sender: UITapGestureRecognizer) {
         self.testView.Shake()
+    }
+    
+    private func shakeView3(_ sender: UITapGestureRecognizer) {
+        self.testView3.Shake()
+    }
+    
+    private func shakeView5(_ sender: UILongPressGestureRecognizer) {
+        self.testView5.Shake()
     }
 }
