@@ -22,13 +22,11 @@ class ViewController: UIViewController {
         setupViews()
         
         testView.AddSingleTapRecoWith(action: self.shakeView)
-        
         testView2.AddSingleTapRecoWith { [weak self] tap -> Void in
             if let sSelf = self {
                 sSelf.testView2.Shake()
             }
         }
-
         testView3.AddDoubleTapRecoWith(action: self.shakeView3)
         
         testView4.AddDoubleTapRecoWith { [weak self] tap -> Void in
@@ -36,7 +34,6 @@ class ViewController: UIViewController {
                 sSelf.testView4.Shake()
             }
         }
-        
         testView5.AddLongPressRecoWith(action: self.shakeView5)
         testView6.AddLongPressRecoWith { [weak self] longPress -> Void in
             if let sSelf = self {

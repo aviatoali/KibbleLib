@@ -9,6 +9,10 @@ public extension UIView {
         subviews.forEach { addSubview($0) }
     }
     
+    func RemoveAllSubviews() {
+        subviews.forEach { $0.removeFromSuperview() }
+    }
+    
     func Shake() {
         let animation = CABasicAnimation(keyPath: "position")
         animation.duration = 0.09
@@ -45,12 +49,12 @@ public extension UIView {
         }
     }
 
-    @objc func swizzled_removeFromSuperview() {
+    @objc fileprivate func swizzled_removeFromSuperview() {
         self.clearActionHolder()
         self.swizzled_removeFromSuperview()
     }
 
-    func clearActionHolder() {
+    private func clearActionHolder() {
         if let gestureRecos = self.gestureRecognizers {
             for reco: UIGestureRecognizer in gestureRecos as [UIGestureRecognizer] {
                 if let tap = reco as? UITapGestureRecognizer {
