@@ -20,7 +20,6 @@ class ViewController: UIViewController {
     override func loadView() {
         super.loadView()
         setupViews()
-        
         testView.AddSingleTapRecoWith(action: self.shakeView)
         testView2.AddSingleTapRecoWith { [weak self] tap -> Void in
             if let sSelf = self {
@@ -28,7 +27,6 @@ class ViewController: UIViewController {
             }
         }
         testView3.AddDoubleTapRecoWith(action: self.shakeView3)
-        
         testView4.AddDoubleTapRecoWith { [weak self] tap -> Void in
             if let sSelf = self {
                 sSelf.testView4.Shake()
