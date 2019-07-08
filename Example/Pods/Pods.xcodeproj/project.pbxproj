@@ -47,9 +47,14 @@
 		3FE6B7466A47A04A940760E383465EAA /* NimbleXCTestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C9293D14A58DDD97AA4880039FCC9A /* NimbleXCTestHandler.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		40039E0AF0D764360B1D4FC4F7950D2E /* UIApplication+StrictKeyWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = A90D47CFA5FBD8A0CAE1B29E54441FAE /* UIApplication+StrictKeyWindow.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		405AB644E5E32AB19AE8697B4C0CE124 /* CwlMachBadInstructionHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 24327CFE45A85F80898112441AD0C9A4 /* CwlMachBadInstructionHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		412AC5ED22CCEA190034A76E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412AC5EC22CCEA190034A76E /* StringExtension.swift */; };
 		4195BC4022CBADF8005B5FAF /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4195BC3F22CBADF8005B5FAF /* UIViewExtension.swift */; };
 		41E31C552EE259E4BEC6CFE49299B5C2 /* CwlCatchBadInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92DA5634DE2648F108858D1514F11E5 /* CwlCatchBadInstruction.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		41E4E6E422D3A65300113A21 /* PinEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4E6E322D3A65300113A21 /* PinEntryView.swift */; };
+		41E4E6E522D3A67400113A21 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412AC5EC22CCEA190034A76E /* StringExtension.swift */; };
+		41E4E6E922D3A6B800113A21 /* FormActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4E6E822D3A6B800113A21 /* FormActionView.swift */; };
+		41E4E6ED22D3A70900113A21 /* UnderlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4E6EC22D3A70900113A21 /* UnderlineTextField.swift */; };
+		41E4E6EF22D3A78100113A21 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4E6EE22D3A78100113A21 /* UITextFieldExtension.swift */; };
+		41E4E6F122D3A9A800113A21 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4E6F022D3A9A800113A21 /* Validation.swift */; };
 		42AB7693DF9D773D21FB710EC9C848D9 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853E409934965A580F65F89581D275CD /* Errors.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		43BF42159F430B01CB7F94DFDA66F510 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E906E59597539202C0610CB360AA2AC /* XCTest.framework */; };
 		444242F3A5A087132A93CA36017AD620 /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C062573D6290607874FEA0A2892CC98 /* Async.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
@@ -270,6 +275,11 @@
 		412AC5EC22CCEA190034A76E /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = KibbleLib/Classes/StringExtension.swift; sourceTree = "<group>"; };
 		416073140B6DBA19B7885A7D4593132C /* CwlCatchException.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CwlCatchException.h; path = Carthage/Checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchException.h; sourceTree = "<group>"; };
 		4195BC3F22CBADF8005B5FAF /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = KibbleLib/Classes/UIViewExtension.swift; sourceTree = "<group>"; };
+		41E4E6E322D3A65300113A21 /* PinEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PinEntryView.swift; path = KibbleLib/Classes/PinEntryView.swift; sourceTree = "<group>"; };
+		41E4E6E822D3A6B800113A21 /* FormActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FormActionView.swift; path = KibbleLib/Classes/FormActionView.swift; sourceTree = "<group>"; };
+		41E4E6EC22D3A70900113A21 /* UnderlineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UnderlineTextField.swift; path = KibbleLib/Classes/UnderlineTextField.swift; sourceTree = "<group>"; };
+		41E4E6EE22D3A78100113A21 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UITextFieldExtension.swift; path = KibbleLib/Classes/UITextFieldExtension.swift; sourceTree = "<group>"; };
+		41E4E6F022D3A9A800113A21 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = KibbleLib/Classes/Validation.swift; sourceTree = "<group>"; };
 		433D88FE5BF80D8E91F7B74624EE96CE /* BeLessThan.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeLessThan.swift; path = Sources/Nimble/Matchers/BeLessThan.swift; sourceTree = "<group>"; };
 		44CD870159CC5861D16189C5D5ED82A2 /* Pods-KibbleLib_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-KibbleLib_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		454C5C19F9903D9958880816EFAE4E0B /* Nimble-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Nimble-dummy.m"; sourceTree = "<group>"; };
@@ -867,6 +877,11 @@
 				2C965FED9D7C74C6461E52C3F8BC2AD7 /* Support Files */,
 				4195BC3F22CBADF8005B5FAF /* UIViewExtension.swift */,
 				412AC5EC22CCEA190034A76E /* StringExtension.swift */,
+				41E4E6E322D3A65300113A21 /* PinEntryView.swift */,
+				41E4E6E822D3A6B800113A21 /* FormActionView.swift */,
+				41E4E6EC22D3A70900113A21 /* UnderlineTextField.swift */,
+				41E4E6EE22D3A78100113A21 /* UITextFieldExtension.swift */,
+				41E4E6F022D3A9A800113A21 /* Validation.swift */,
 			);
 			name = KibbleLib;
 			path = ../..;
@@ -1289,7 +1304,6 @@
 			files = (
 				6DBC8EB7532E931C2FBDA71D1E0B66A4 /* FBSnapshotTestCase-dummy.m in Sources */,
 				8CE3BF0ACE07EA42DD5DAC871BF4B767 /* FBSnapshotTestCase.m in Sources */,
-				412AC5ED22CCEA190034A76E /* StringExtension.swift in Sources */,
 				E8AC509D18EBF21B1FEA909652A01108 /* FBSnapshotTestCasePlatform.m in Sources */,
 				88396E68DC05A379282F3B374F75F43C /* FBSnapshotTestController.m in Sources */,
 				9D65089019D558E5A9661F2DCAD20313 /* SwiftSupport.swift in Sources */,
@@ -1305,7 +1319,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEE48C3649696FD75DC1B55AB9DE2D72 /* KibbleLib-dummy.m in Sources */,
+				41E4E6EF22D3A78100113A21 /* UITextFieldExtension.swift in Sources */,
+				41E4E6E422D3A65300113A21 /* PinEntryView.swift in Sources */,
+				41E4E6E522D3A67400113A21 /* StringExtension.swift in Sources */,
+				41E4E6E922D3A6B800113A21 /* FormActionView.swift in Sources */,
 				4195BC4022CBADF8005B5FAF /* UIViewExtension.swift in Sources */,
+				41E4E6F122D3A9A800113A21 /* Validation.swift in Sources */,
+				41E4E6ED22D3A70900113A21 /* UnderlineTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1676,7 +1696,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1962,7 +1982,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
