@@ -11,11 +11,31 @@ Bits and pieces (get it? Kibbles and bits? :D...sorry, I'm better than this) of 
 
 ### Pinview
 
+```swift
+    let pinEntryView = PinEntryView()
+    pinEntryView.delegate = self
+    pinEntryView.length = 6
+```
+
 ![Alt text](/KibbleLib/Assets/pinview.png "PinEntryView")
 
 ![Alt text](/KibbleLib/Assets/pinview_dob.png "PinEntryView DOB Sample")
 
+### UnderlineTextField
+
+```swift
+let textField = UnderlineTextField()
+textField.fieldDelegate = self
+```
+
 ![Alt text](/KibbleLib/Assets/textField.png "UnderlineTextField")
+
+### FormActionView
+
+```swift
+let actionView = FormActionView(title: "FormActionView", buttonColor: .blue, enabledbyDefault: true)
+actionView.delegate = self
+```
 
 ![Alt text](/KibbleLib/Assets/standard_button.png "FormActionView")
 
@@ -40,7 +60,7 @@ pod 'KibbleLib'
 
 ## Author
 
-Ali H. Shah, email: aviatoali@gmail.com, linkedin: https://www.linkedin.com/in/ali-shah-717144123/
+Ali H. Shah, email: aviatoali@gmail.com, [linkedin](https://www.linkedin.com/in/ali-shah-717144123/)
 
 ## License
 
