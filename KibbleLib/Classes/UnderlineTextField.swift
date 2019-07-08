@@ -39,7 +39,7 @@ public class UnderlineTextField: UITextField {
         }
     }
     
-    var underlineColor: UIColor = UIColor(red: 119/255, green: 159/255, blue: 219/255, alpha: 1.0) {
+    public var underlineColor: UIColor = UIColor(red: 119/255, green: 159/255, blue: 219/255, alpha: 1.0) {
         didSet {
             self.updateUnderline()
         }
@@ -71,49 +71,49 @@ public class UnderlineTextField: UITextField {
         }
     }
     
-    var errorUnderlineColor: UIColor = UIColor(red: 255/255, green: 113/255, blue: 113/255, alpha: 1.0)
-    var errorTextColor: UIColor = UIColor(red: 255/255, green: 113/255, blue: 113/255, alpha: 1.0)
+    public var errorUnderlineColor: UIColor = UIColor(red: 255/255, green: 113/255, blue: 113/255, alpha: 1.0)
+    public var errorTextColor: UIColor = UIColor(red: 255/255, green: 113/255, blue: 113/255, alpha: 1.0)
     
-    var baseTextColor: UIColor = .white {
+    public var baseTextColor: UIColor = .white {
         didSet {
             super.textColor = self.baseTextColor
         }
     }
     
-    var baseUnderlineColor: UIColor = UIColor(red: 119/255, green: 159/255, blue: 219/255, alpha: 1.0) {
+    public var baseUnderlineColor: UIColor = UIColor(red: 119/255, green: 159/255, blue: 219/255, alpha: 1.0) {
         didSet {
             self.underlineColor = self.baseUnderlineColor
         }
     }
     
-    var placeholderColor: UIColor = UIColor(red: 51/255, green: 51/255, blue: 51/255, alpha: 1.0) {
+    public var placeholderColor: UIColor = UIColor(red: 51/255, green: 51/255, blue: 51/255, alpha: 1.0) {
         didSet {
             self.updatePlaceholder()
         }
     }
     
-    var placeholderFont: UIFont = UIFont.systemFont(ofSize: 18) {
+    public var placeholderFont: UIFont = UIFont.systemFont(ofSize: 18) {
         didSet {
             self.updatePlaceholder()
         }
     }
     
     // Note: This will set the line and placeholder to this color.
-    var disabledColor: UIColor = UIColor.white.withAlphaComponent(0.88) {
+   public  var disabledColor: UIColor = UIColor.white.withAlphaComponent(0.88) {
         didSet {
             self.updateFieldViews()
             self.updatePlaceholder()
         }
     }
     
-    var selectedUnderlineColor: UIColor = UIColor(red: 119/255, green: 159/255, blue: 219/255, alpha: 1.0) {
+    public var selectedUnderlineColor: UIColor = UIColor(red: 119/255, green: 159/255, blue: 219/255, alpha: 1.0) {
         didSet {
             self.updateUnderline()
         }
     }
     
     // Note: Height of bottom line in base state
-    var underlineHeight: CGFloat = 0.5 {
+    public var underlineHeight: CGFloat = 0.5 {
         didSet {
             self.updateUnderline()
             self.setNeedsDisplay()
@@ -121,14 +121,14 @@ public class UnderlineTextField: UITextField {
     }
     
     // Note: Height of the bottom line when editing
-    var selectedUnderlineHeight: CGFloat = 1.0 {
+    public var selectedUnderlineHeight: CGFloat = 1.0 {
         didSet {
             self.updateUnderline()
             self.setNeedsDisplay()
         }
     }
     
-    var hasError: Bool = false {
+    public var hasError: Bool = false {
         didSet {
             var underlineColor = self.baseUnderlineColor
             var textColor = self.textColor
@@ -143,20 +143,20 @@ public class UnderlineTextField: UITextField {
         }
     }
     
-    var editingSelected: Bool {
+    public var editingSelected: Bool {
         return super.isEditing || self.isSelected
     }
     
-    var rectInset: UIEdgeInsets? {
+    public var rectInset: UIEdgeInsets? {
         didSet {
             self.updateUnderline()
             self.setNeedsDisplay()
         }
     }
     
-    weak var fieldDelegate: UnderlineTextFieldDelegate?
+    public weak var fieldDelegate: UnderlineTextFieldDelegate?
     
-    init() {
+    public init() {
         super.init(frame: CGRect.zero)
         
         self.delegate = self
@@ -256,7 +256,7 @@ public class UnderlineTextField: UITextField {
         self.updateTextColor()
     }
     
-    func setTitle(with text: String, font: UIFont, and textColor: UIColor, paddingRight: CGFloat = 15.0) {
+    public func setTitle(with text: String, font: UIFont, and textColor: UIColor, paddingRight: CGFloat = 15.0) {
         if !self.hasTitle {
             let textSize = text.size(withAttributes: [.font: font])
             let width = textSize.width + paddingRight
