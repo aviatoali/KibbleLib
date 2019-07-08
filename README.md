@@ -12,9 +12,9 @@ Bits and pieces (get it? Kibbles and bits? :D...sorry, I'm better than this) of 
 ### Pinview
 
 ```swift
-    let pinEntryView = PinEntryView()
-    pinEntryView.delegate = self
-    pinEntryView.length = 6
+let pinEntryView = PinEntryView()
+pinEntryView.delegate = self
+pinEntryView.length = 6
 ```
 
 ![Alt text](/KibbleLib/Assets/pinview.png "PinEntryView")
@@ -42,6 +42,41 @@ actionView.delegate = self
 ![Alt text](/KibbleLib/Assets/buttons_joined.png "FormActionView Joined")
 
 ![Alt text](/KibbleLib/Assets/button_loading.png "FormActionView with an image")
+
+### Convenience extension methods
+
+#### UIView shake animation
+```swift
+let view = UIView()
+view.Shake()
+```
+#### Add array of subviews & remove all subviews
+```swift
+view.AddSubviews(view1, view2, view3)
+view.RemoveAllSubviews()
+```
+
+#### UIView Shake Animation
+```swift
+let view = UIView()
+view.Shake()
+```
+
+### Add gesture recognizers through handler closure, or by passing handler
+```swift
+view.AddSingleTapRecoWith(action: self.shakeView)
+view.AddTapRecoWith(numberOfTaps: 2, action: self.shakeView)
+view.AddLongPressRecoWith { [weak self] longPress -> Void in
+    if let sSelf = self {
+        sSelf.view.Shake()
+    }
+}
+```
+
+### String extension for LocalizedString syntax simplification
+```swift
+"sample_localized_string".Localized()
+```
 
 ## Example
 
