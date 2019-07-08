@@ -2,7 +2,7 @@
 
 import Quick
 import Nimble
-import KibbleLib
+//import KibbleLib
 
 class TableOfContentsSpec: QuickSpec {
     override func spec() {
