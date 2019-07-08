@@ -7,17 +7,17 @@ import UIKit
  - Original source: https://github.com/Fawxy/CBPinEntryView
  */
 @available(iOS 11.0, *)
-class PinEntryView: UIView {
+public class PinEntryView: UIView {
     
-    var length: Int = 6 {
+    public var length: Int = 6 {
         didSet {
             self.commonInit()
         }
     }
     
-    var spacing: CGFloat = 4.4
+    public var spacing: CGFloat = 4.4
     
-    var entryCornerRadius: CGFloat = 3.0 {
+    public var entryCornerRadius: CGFloat = 3.0 {
         didSet {
             if oldValue != self.entryCornerRadius {
                 self.updateButtonStyles()
@@ -25,7 +25,7 @@ class PinEntryView: UIView {
         }
     }
     
-    var entryBorderWidth: CGFloat = 0 {
+    public var entryBorderWidth: CGFloat = 0 {
         didSet {
             if oldValue != self.entryBorderWidth {
                 self.updateButtonStyles()
@@ -33,7 +33,7 @@ class PinEntryView: UIView {
         }
     }
     
-    var entryDefaultBorderColor: UIColor = .clear {
+    public var entryDefaultBorderColor: UIColor = .clear {
         didSet {
             if oldValue != self.entryDefaultBorderColor {
                 self.updateButtonStyles()
@@ -41,7 +41,7 @@ class PinEntryView: UIView {
         }
     }
     
-    var entryBorderColor: UIColor = UIColor(red: 69/255, green: 78/255, blue: 86/255, alpha: 1.0) {
+    public var entryBorderColor: UIColor = UIColor(red: 69/255, green: 78/255, blue: 86/255, alpha: 1.0) {
         didSet {
             if oldValue != self.entryBorderColor {
                 self.updateButtonStyles()
@@ -49,7 +49,7 @@ class PinEntryView: UIView {
         }
     }
     
-    var entryEditingBackgroundColor: UIColor = UIColor(red: 67/255, green: 115/255, blue: 205/255, alpha: 1.0) {
+    public var entryEditingBackgroundColor: UIColor = UIColor(red: 67/255, green: 115/255, blue: 205/255, alpha: 1.0) {
         didSet {
             if oldValue != self.entryEditingBackgroundColor {
                 self.updateButtonStyles()
@@ -57,9 +57,9 @@ class PinEntryView: UIView {
         }
     }
     
-    var entryErrorBorderColor: UIColor = .red
+    public var entryErrorBorderColor: UIColor = .red
     
-    var entryBackgroundColor: UIColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.4) {
+    public var entryBackgroundColor: UIColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.4) {
         didSet {
             if oldValue != self.entryBackgroundColor {
                 self.updateButtonStyles()
@@ -67,7 +67,7 @@ class PinEntryView: UIView {
         }
     }
     
-    var entryTextColor: UIColor = .white {
+    public var entryTextColor: UIColor = .white {
         didSet {
             if oldValue != self.entryTextColor {
                 self.updateButtonStyles()
@@ -75,7 +75,7 @@ class PinEntryView: UIView {
         }
     }
     
-    var entryFont: UIFont = UIFont.systemFont(ofSize: 38) {
+    public var entryFont: UIFont = UIFont.systemFont(ofSize: 38) {
         didSet {
             if oldValue != self.entryFont {
                 self.updateButtonStyles()
@@ -83,13 +83,13 @@ class PinEntryView: UIView {
         }
     }
     
-    var isSecure: Bool = false
+    public var isSecure: Bool = false
     
-    var secureCharacter: String = "●"
+    public var secureCharacter: String = "●"
     
-    var keyboardType: Int = 4
+    public var keyboardType: Int = 4
     
-    var textContentType: UITextContentType? {
+    public var textContentType: UITextContentType? {
         didSet {
             if let contentType = self.textContentType {
                 self.textField.textContentType = contentType
@@ -97,7 +97,7 @@ class PinEntryView: UIView {
         }
     }
     
-    var textFieldCapitalization: UITextAutocapitalizationType? {
+    public var textFieldCapitalization: UITextAutocapitalizationType? {
         didSet {
             if let capitalization = self.textFieldCapitalization {
                 self.textField.autocapitalizationType = capitalization
@@ -109,30 +109,30 @@ class PinEntryView: UIView {
         case any, numerical, alphanumeric, letters
     }
     
-    var allowedEntryTypes: AllowedEntryTypes = .numerical
+    public var allowedEntryTypes: AllowedEntryTypes = .numerical
     
-    var stackView: UIStackView?
-    var textField: UITextField!
+    public var stackView: UIStackView?
+    public var textField: UITextField!
     
-    var errorMode: Bool = false
+    public var errorMode: Bool = false
     
-    var entryButtons: [UIButton] = [UIButton]()
+    public var entryButtons: [UIButton] = [UIButton]()
     
-    var allowEmptyValues: Bool = true
+    public var allowEmptyValues: Bool = true
     
-    weak var delegate: PinEntryViewDelegate?
+    public weak var delegate: PinEntryViewDelegate?
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
         
         self.commonInit()
     }
-    
+
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    func commonInit() {
+    public func commonInit() {
         self.setupStackView()
         self.setupTextField()
         
@@ -221,7 +221,7 @@ class PinEntryView: UIView {
         self.textField.becomeFirstResponder()
     }
     
-    func setError(isError: Bool) {
+    public func setError(isError: Bool) {
         if isError {
             self.errorMode = true
             for button in self.entryButtons {
@@ -237,7 +237,7 @@ class PinEntryView: UIView {
         }
     }
     
-    func clearEntry() {
+    public func clearEntry() {
         self.setError(isError: false)
         self.textField.text = ""
         for button in self.entryButtons {
@@ -249,7 +249,7 @@ class PinEntryView: UIView {
         }
     }
     
-    func getPinAsInt() -> Int? {
+    public func getPinAsInt() -> Int? {
         if let intOutput = Int(self.textField.text!) {
             return intOutput
         }
@@ -257,11 +257,11 @@ class PinEntryView: UIView {
         return nil
     }
     
-    func getPinAsString() -> String {
+    public func getPinAsString() -> String {
         return self.textField.text!
     }
     
-    func addCustomSpacing(spacing: CGFloat, at indices: [Int]? = nil) {
+    public func addCustomSpacing(spacing: CGFloat, at indices: [Int]? = nil) {
         if let ind = indices {
             for i in 0 ..< ind.count {
                 if let view = self.stackView?.arrangedSubviews[ind[i]] {
@@ -277,7 +277,7 @@ class PinEntryView: UIView {
         }
     }
     
-    @discardableResult override func becomeFirstResponder() -> Bool {
+    @discardableResult override public func becomeFirstResponder() -> Bool {
         super.becomeFirstResponder()
         
         if let firstButton = self.entryButtons.first {
@@ -287,7 +287,7 @@ class PinEntryView: UIView {
         return true
     }
     
-    @discardableResult override func resignFirstResponder() -> Bool {
+    @discardableResult override public func resignFirstResponder() -> Bool {
         super.resignFirstResponder()
         
         self.setError(isError: false)
@@ -295,7 +295,7 @@ class PinEntryView: UIView {
         return self.textField.resignFirstResponder()
     }
     
-    @discardableResult func validatedText(validationType: ValidatorType) throws -> String {
+    @discardableResult public func validatedText(validationType: ValidatorType) throws -> String {
         let validator = ValidatorFactory.validatorFor(type: validationType)
         return try validator.validated(self.getPinAsString())
     }
@@ -369,6 +369,6 @@ extension PinEntryView: UITextFieldDelegate {
     }
 }
 
-protocol PinEntryViewDelegate: NSObjectProtocol {
+public protocol PinEntryViewDelegate: NSObjectProtocol {
     func entryChanged(_ completed: Bool)
 }

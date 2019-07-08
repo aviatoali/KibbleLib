@@ -7,13 +7,13 @@ import UIKit
  - Used in: SignUpViewController
  */
 @available(iOS 11.0, *)
-class FormActionView: UIView {
+public class FormActionView: UIView {
     private let SHADOW_RADIUS: CGFloat = 2
     private let viewInner: UIView = UIView()
     private let labelTitle: UILabel = UILabel()
     private let imageView: UIImageView = UIImageView()
     
-    var isEnabled: Bool? {
+    public var isEnabled: Bool? {
         didSet {
             var color = UIColor(red: 196/255, green: 205/255, blue: 210/255, alpha: 1.0)
             var userInteraction = false
@@ -27,16 +27,16 @@ class FormActionView: UIView {
         }
     }
     
-    var buttonColor: UIColor {
+    public var buttonColor: UIColor {
         didSet {
             self.viewInner.backgroundColor = self.buttonColor
             self.viewInner.layer.borderColor = self.buttonColor.cgColor
         }
     }
     
-    weak var delegate: FormActionViewDelegate?
+    public weak var delegate: FormActionViewDelegate?
     
-    init(frame: CGRect, image: UIImage? = nil, title: String = "", titleColor: UIColor = .white, titleFont: UIFont = UIFont.systemFont(ofSize: 16.0), buttonColor: UIColor, enabledByDefault: Bool = false) {
+    public init(frame: CGRect, image: UIImage? = nil, title: String = "", titleColor: UIColor = .white, titleFont: UIFont = UIFont.systemFont(ofSize: 16.0), buttonColor: UIColor, enabledByDefault: Bool = false) {
         self.buttonColor = buttonColor
         self.isEnabled = enabledByDefault
         super.init(frame: frame)
@@ -87,7 +87,7 @@ class FormActionView: UIView {
     }
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
-    convenience init(image: UIImage? = nil, title: String = "", titleColor: UIColor = .white, titleFont: UIFont = UIFont.systemFont(ofSize: 16.0), buttonColor: UIColor, enabledByDefault: Bool = false) {
+    public convenience init(image: UIImage? = nil, title: String = "", titleColor: UIColor = .white, titleFont: UIFont = UIFont.systemFont(ofSize: 16.0), buttonColor: UIColor, enabledByDefault: Bool = false) {
         self.init(frame: CGRect.zero, image: image, title: title, titleColor: titleColor, titleFont: titleFont, buttonColor: buttonColor, enabledByDefault: enabledByDefault)
     }
     
@@ -136,6 +136,6 @@ class FormActionView: UIView {
     }
 }
 
-protocol FormActionViewDelegate: NSObjectProtocol {
+public protocol FormActionViewDelegate: NSObjectProtocol {
     func actionTapped(view: UIView)
 }

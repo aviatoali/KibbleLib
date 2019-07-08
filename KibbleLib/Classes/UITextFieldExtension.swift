@@ -4,7 +4,7 @@ import UIKit
  - Author: Ali H. Shah
  - Date: 03/12/2019
  */
-extension UITextField {
+public extension UITextField {
     /// Moves the caret to the correct position by removing the trailing whitespace
     func FixCaretPosition() {
         // Moving the caret to the correct position by removing the trailing whitespace

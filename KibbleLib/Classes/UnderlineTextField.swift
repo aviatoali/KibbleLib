@@ -5,12 +5,12 @@ import UIKit
  - Date: 03/12/2019
  */
 @available(iOS 11.0, *)
-class UnderlineTextField: UITextField {
+public class UnderlineTextField: UITextField {
     private var viewUnderline: UIView = UIView()
     private var savedHighlightState: Bool = false
     private var hasTitle: Bool = false
     
-    override var textColor: UIColor? {
+    override public var textColor: UIColor? {
         get {
             return self.baseTextColor
         }
@@ -19,7 +19,7 @@ class UnderlineTextField: UITextField {
         }
     }
     
-    override var isHighlighted: Bool {
+    override public var isHighlighted: Bool {
         get {
             return self.savedHighlightState
         }
@@ -29,7 +29,7 @@ class UnderlineTextField: UITextField {
         }
     }
     
-    override var isSecureTextEntry: Bool {
+    override public var isSecureTextEntry: Bool {
         get {
             return super.isSecureTextEntry
         }
@@ -45,26 +45,26 @@ class UnderlineTextField: UITextField {
         }
     }
     
-    override var text: String? {
+    override public var text: String? {
         didSet {
             self.updateFieldViews()
         }
     }
     
-    override var placeholder: String? {
+    override public var placeholder: String? {
         didSet {
             self.setNeedsDisplay()
             self.updatePlaceholder()
         }
     }
     
-    override var isSelected: Bool {
+    override public var isSelected: Bool {
         didSet {
             self.updateFieldViews()
         }
     }
     
-    override var isEnabled: Bool {
+    override public var isEnabled: Bool {
         didSet {
             self.updateFieldViews()
             self.updatePlaceholder()
@@ -176,24 +176,24 @@ class UnderlineTextField: UITextField {
     }
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         self.viewUnderline.frame = self.underlineRect(bounds, editing: self.editingSelected)
     }
     
-    @discardableResult override func becomeFirstResponder() -> Bool {
+    @discardableResult override public func becomeFirstResponder() -> Bool {
         let result = super.becomeFirstResponder()
         self.updateFieldViews()
         return result
     }
     
-    @discardableResult override func resignFirstResponder() -> Bool {
+    @discardableResult override public func resignFirstResponder() -> Bool {
         let result = super.resignFirstResponder()
         self.updateFieldViews()
         return result
     }
     
-    override func textRect(forBounds bounds: CGRect) -> CGRect {
+    override public func textRect(forBounds bounds: CGRect) -> CGRect {
         let superRect = super.textRect(forBounds: bounds)
         let rect = CGRect(x: superRect.origin.x, y: 0, width: superRect.size.width, height: superRect.size.height - self.selectedUnderlineHeight)
         if let inset = self.rectInset {
@@ -202,7 +202,7 @@ class UnderlineTextField: UITextField {
         return rect
     }
     
-    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+    override public func editingRect(forBounds bounds: CGRect) -> CGRect {
         let superRect = super.editingRect(forBounds: bounds)
         let rect = CGRect(x: superRect.origin.x, y: 0, width: superRect.size.width, height: superRect.size.height - self.selectedUnderlineHeight)
         if let inset = self.rectInset {
@@ -211,7 +211,7 @@ class UnderlineTextField: UITextField {
         return rect
     }
     
-    override func placeholderRect(forBounds bounds: CGRect) -> CGRect {
+    override public func placeholderRect(forBounds bounds: CGRect) -> CGRect {
         let rect = CGRect(x: 0, y: 0, width: bounds.size.width, height: bounds.size.height - self.selectedUnderlineHeight)
         return rect
     }
@@ -285,14 +285,14 @@ class UnderlineTextField: UITextField {
 
 @available(iOS 11.0, *)
 extension UnderlineTextField: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if let delegate = self.fieldDelegate {
             return delegate.textFieldShouldReturn(textField)
         }
         return true
     }
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if let delegate = self.fieldDelegate {
             return delegate.textField(textField, shouldChangeCharactersIn: range, replacementString: string)
         }
@@ -300,7 +300,7 @@ extension UnderlineTextField: UITextFieldDelegate {
     }
 }
 
-protocol UnderlineTextFieldDelegate: NSObjectProtocol {
+public protocol UnderlineTextFieldDelegate: NSObjectProtocol {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
     func textFieldShouldReturn(_ textField: UITextField) -> Bool
     func textFieldChanged(_ textField: UITextField)

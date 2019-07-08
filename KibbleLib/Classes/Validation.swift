@@ -6,18 +6,18 @@ import Foundation
  - Note:
  - Based on ideas demonstrated in https://medium.com/swift2go/a-better-approach-to-text-field-validations-on-ios-81bd87598070
  */
-class ValidationError: Error {
-    var message: String
-    init(_ message: String) {
+public class ValidationError: Error {
+    public var message: String
+    public init(_ message: String) {
         self.message = message
     }
 }
 
-protocol Validator {
+public protocol Validator {
     @discardableResult func validated(_ value: String) throws -> String
 }
 
-enum ValidatorType {
+public enum ValidatorType {
     case email
     case requiredField
     case dateOfBirth(calendar: Calendar, currentDate: Date, minAgeRequired: Int, maxAgeAllowed: Int)
@@ -25,8 +25,8 @@ enum ValidatorType {
     case password
 }
 
-enum ValidatorFactory {
-    static func validatorFor(type: ValidatorType) -> Validator {
+public enum ValidatorFactory {
+    public static func validatorFor(type: ValidatorType) -> Validator {
         switch type {
         case .email:
             return EmailValidator()
@@ -42,8 +42,8 @@ enum ValidatorFactory {
     }
 }
 
-struct EmailValidator: Validator {
-    @discardableResult func validated(_ value: String) throws -> String {
+public struct EmailValidator: Validator {
+    @discardableResult public func validated(_ value: String) throws -> String {
         do {
             if try NSRegularExpression(pattern: "^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}$", options: .caseInsensitive).firstMatch(in: value, options: [], range: NSRange(location: 0, length: value.count)) == nil {
                 throw ValidationError("Invalid e-mail address")
@@ -55,8 +55,8 @@ struct EmailValidator: Validator {
     }
 }
 
-struct RequiredFieldValidator: Validator {
-    @discardableResult func validated(_ value: String) throws -> String {
+public struct RequiredFieldValidator: Validator {
+    @discardableResult public func validated(_ value: String) throws -> String {
         guard !value.trimmingCharacters(in: .whitespaces).isEmpty else {
             throw ValidationError("This field is required")
         }
@@ -64,20 +64,20 @@ struct RequiredFieldValidator: Validator {
     }
 }
 
-struct DateOfBirthValidator: Validator {
+public struct DateOfBirthValidator: Validator {
     private let calendar: Calendar
     private let currentDate: Date
     private let minAgeRequired: Int
     private let maxAgeAllowed: Int
     
-    init(calendar: Calendar, currentDate: Date, minAgeRequired: Int, maxAgeAllowed: Int) {
+    public init(calendar: Calendar, currentDate: Date, minAgeRequired: Int, maxAgeAllowed: Int) {
         self.calendar = calendar
         self.currentDate = currentDate
         self.minAgeRequired = minAgeRequired
         self.maxAgeAllowed = maxAgeAllowed
     }
     
-    @discardableResult func validated(_ value: String) throws -> String {
+    @discardableResult public func validated(_ value: String) throws -> String {
         var day = ""
         var month = ""
         var year = ""
@@ -105,14 +105,14 @@ struct DateOfBirthValidator: Validator {
     }
 }
 
-struct PhoneNumberValidator: Validator {
+public struct PhoneNumberValidator: Validator {
     private let digitCount: Int
     
-    init(digitCount: Int) {
+    public init(digitCount: Int) {
         self.digitCount = digitCount
     }
     
-    @discardableResult func validated(_ value: String) throws -> String {
+    @discardableResult public func validated(_ value: String) throws -> String {
         let pureNum = value.components(separatedBy: CharacterSet.decimalDigits.inverted).joined(separator: "")
         if pureNum.count != self.digitCount {
             throw ValidationError("Phone number invalid")
@@ -121,8 +121,8 @@ struct PhoneNumberValidator: Validator {
     }
 }
 
-struct PasswordValidator: Validator {
-    @discardableResult func validated(_ value: String) throws -> String {
+public struct PasswordValidator: Validator {
+    @discardableResult public func validated(_ value: String) throws -> String {
         guard !value.isEmpty, value.count >= 8 else {
             throw ValidationError("Password must be at least 8 characters in length")
         }
