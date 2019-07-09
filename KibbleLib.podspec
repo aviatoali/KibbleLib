@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KibbleLib'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'Bits and pieces of extensions and utils that have been gathered over time to make future apps and projects more convenient.'
 
 # This description is used to generate tags and improve search results.
