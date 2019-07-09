@@ -1,8 +1,7 @@
 # KibbleLib
 
-[![CI Status](https://img.shields.io/travis/aviatoali/KibbleLib.svg?style=flat)](https://travis-ci.org/aviatoali/KibbleLib)
 [![Version](https://img.shields.io/cocoapods/v/KibbleLib.svg?style=flat)](https://cocoapods.org/pods/KibbleLib)
-[![License](https://img.shields.io/cocoapods/l/KibbleLib.svg?style=flat)](https://cocoapods.org/pods/KibbleLib)
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
 [![Platform](https://img.shields.io/cocoapods/p/KibbleLib.svg?style=flat)](https://cocoapods.org/pods/KibbleLib)
 
 Bits and pieces (get it? Kibbles and bits? :D...sorry, I'm better than this) of extensions and utils that have been gathered over time to make future apps and projects more convenient. 
@@ -17,9 +16,9 @@ pinEntryView.delegate = self
 pinEntryView.length = 6
 ```
 
-![Alt text](/KibbleLib/Assets/pinview.png "PinEntryView")
+![Alt text](https://github.com/aviatoali/KibbleLib/blob/master/KibbleLib/Assets/pinview.png?raw=true "PinEntryView")
 
-![Alt text](/KibbleLib/Assets/pinview_dob.png "PinEntryView DOB Sample")
+![Alt text](https://github.com/aviatoali/KibbleLib/blob/master/KibbleLib/Assets/pinview_dob.png?raw=true "PinEntryView DOB Sample")
 
 ### UnderlineTextField
 
@@ -28,7 +27,7 @@ let textField = UnderlineTextField()
 textField.fieldDelegate = self
 ```
 
-![Alt text](/KibbleLib/Assets/textField.png "UnderlineTextField")
+![Alt text](https://github.com/aviatoali/KibbleLib/blob/master/KibbleLib/Assets/textField.png?raw=true "UnderlineTextField")
 
 ### FormActionView
 
@@ -37,11 +36,11 @@ let actionView = FormActionView(title: "FormActionView", buttonColor: .blue, ena
 actionView.delegate = self
 ```
 
-![Alt text](/KibbleLib/Assets/standard_button.png "FormActionView")
+![Alt text](https://github.com/aviatoali/KibbleLib/blob/master/KibbleLib/Assets/standard_button.png?raw=true "FormActionView")
 
-![Alt text](/KibbleLib/Assets/buttons_joined.png "FormActionView Joined")
+![Alt text](https://github.com/aviatoali/KibbleLib/blob/master/KibbleLib/Assets/buttons_joined.png?raw=true "FormActionView Joined")
 
-![Alt text](/KibbleLib/Assets/button_loading.png "FormActionView with an image")
+![Alt text](https://github.com/aviatoali/KibbleLib/blob/master/KibbleLib/Assets/button_loading.png?raw=true "FormActionView with an image")
 
 ### Convenience extension methods
 
